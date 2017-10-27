@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link rel="stylesheet" media="(max-width: 670px)" href="css/responsive.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <title>My Neighbourhood</title>
+        <script type="text/javascript" src="js/knockout.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="side-panel" id="side-div">
+                <h4>YOU CAN SEARCH!!</h4>
+                <input type="text" id="search-dest" placeholder="Search dest...">
+                <button id="filter" data-bind="click:filterClick"><span><img height="20px" src="images/filter.png"></span></button>
+                <ul id="destinations" data-bind="foreach: filteredMarks">
+                    <li><button data-bind="text:$data.title,click:$parent.enableCurrent"></button></li>
+                </ul>
+            </div>
+            <div class="side-panel wiki-panel">
+                <h4>Wiki Articles!!!</h4>
+                <div>
+                    <ul id="wiki-link">
+                    </ul>
+                </div>
+            </div>
+            <div id="search-button">
+                <button><img src="images/search.png"></button>
+            </div>
+            <div id="wiki-button">
+                <button><img src="images/wiki.png"></button>
+            </div>
+            <div class="content">
+                <div class="header">
+                    <h3 data-bind="click:getInitial">MY NEIGHBOURHOOD</h3>
+                </div>
+                <div id="map">
+                </div>
+            </div>
+        </div>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNKtSJ1Joo6vqa3xziFPrhx8VjhEdORz0&v=3&callback=initMap"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        </div>
+    </body>
+</html>
